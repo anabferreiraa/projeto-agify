@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>ola</h1>
+    <header class="container">
+      <h2 class="title">Olá, Seja Bem Vindo(a)</h2>
+    </header>
+    <main class="container">
+      <div class="card">
+        <p>Digite o seu primeiro nome</p>
+        <input
+          type="text"
+          id="nameValue"
+          placeholder="Primeiro nome"
+          required
+        />
+        <div class="resultado-api">
+          <div class="text">
+            <p id="nameResult" class="resultado"></p>
+            <p id="ageResult"></p>
+          </div>
+          <div id="icons" class="icons">
+            <div>
+            <img id="imgIconResultF" class="imgIconResult" src="" alt="" />
+            <img id="imgIconResultM" class="imgIconResult" src="" alt="" />
+            </div>
+            <img id="imgIconActions" class="ImagIcon" src="images/icons/mulher.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
