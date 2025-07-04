@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agify</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Agify</title>
+  <meta name="description" content="Este é um projeto que utiliza a api agify.io para descobrir a idade de uma pessoa.">
+  <meta property="og:image" content="/images/thumb.webp" />
+  <link rel="shortcut icon" href="/images/favicon.webp" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header class="container">
-      <h2 class="title">Olá, Seja Bem Vindo(a)</h2>
+  <div class="container">
+    <header>
+      <h1>Olá, Seja Bem Vindo(a)</h1>
     </header>
-    <main class="container">
-      <div class="card">
-        <p>Digite o seu primeiro nome</p>
-        <input
-          type="text"
-          id="nameValue"
-          placeholder="Primeiro nome"
-          required
-        />
-        <div class="resultado-api">
-          <div class="text">
-            <p id="nameResult" class="resultado"></p>
-            <p id="ageResult"></p>
-          </div>
-          <div id="icons" class="icons">
-            <div>
-            <img id="imgIconResultF" class="imgIconResult" src="" alt="" />
-            <img id="imgIconResultM" class="imgIconResult" src="" alt="" />
-            </div>
-            <img id="imgIconActions" class="ImagIcon" src="images/icons/mulher.png" alt="" />
-          </div>
-        </div>
+    <main>
+      <div class="input-wrapper">
+        <label for="nameValue">Digite um nome</label>
+        <input type="text" id="userName" placeholder="Seu primeiro nome"  onblur="blur()" />
+      </div>
+
+      <div class="api-loading">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <circle fill="#3c1c0c" stroke="#3c1c0c" stroke-width="15" r="15" cx="40" cy="100">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1"
+              repeatCount="indefinite" begin="-.4"></animate>
+          </circle>
+          <circle fill="#3c1c0c" stroke="#3c1c0c" stroke-width="15" r="15" cx="100" cy="100">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1"
+              repeatCount="indefinite" begin="-.2"></animate>
+          </circle>
+          <circle fill="#3c1c0c" stroke="#3c1c0c" stroke-width="15" r="15" cx="160" cy="100">
+            <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1"
+              repeatCount="indefinite" begin="0"></animate>
+          </circle>
+        </svg>
+        <p>Buscando...</p>
+      </div>
+
+      <div class="api-responses">
+        <h2>Resultado para:</h2>
+        <span class="api-response-name"></span>
+        <h2>A idade estimada é: </h2>
+        <span class="api-response-age"></span>
+        <h2>Está estimativa foi baseada em:</h2>
+        <span class="api-response-count"></span>
+      </div>
+
+      <div class="api-error">
+        <h2>Erro ao buscar dados da API</h2>
+      </div>
+
+      <div class="invalid-user-input-error">
+        <h2>Digite um nome valido</h2>
+      </div>
+
+      <div class="animated-actions">
+        <img class="animated-action" src="/images/starting.png" alt="" />
       </div>
     </main>
-
-    <script src="js/script.js"></script>
+    <footer>
+      <p>Desenvolvido por <a href="https://github.com/anabferreiraa" target="_blank">Ana Beatriz</a></p>
+    </footer>
+  </div>
+ 
+  <script src="/js/api.js"></script>
 </body>
+
 </html>
